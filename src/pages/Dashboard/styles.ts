@@ -7,7 +7,7 @@ interface FormProps {
 }
 
 export const Form = styled.form<FormProps>`
-  margin: 64px auto 0;
+  margin: 0 auto;
   max-width: 700px;
   display: flex;
   input {
@@ -29,81 +29,19 @@ export const Form = styled.form<FormProps>`
     }
   }
   button {
-    width: 210px;
+    width: 80px;
     height: 70px;
-    background: #737380;
+    background: ${COLORS.white};
     border-radius: 0 5px 5px 0;
     border: 0;
-    color: #fff;
+    color: ${COLORS.gray_dark};
     font-weight: bold;
     transition: background-color 0.2s;
     &:hover {
-      background: ${COLORS.green};
+      color: ${COLORS.green};
     }
-  }
-`;
-
-export const Repositories = styled.div`
-  margin-top: ${SIZES.xlarge};
-  background: #fff;
-  border-radius: 5px;
-  width: 100%;
-  padding: ${SIZES.large};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: ${COLORS.gray_dark};
-`;
-
-export const RepositoryInfo = styled.div`
-  flex: 1;
-  margin-left: ${SIZES.xxlarge};
-  position: relative;
-  overflow: hidden;
-
-  p {
-    margin: ${SIZES.small} 0;
-  }
-
-  ul {
-    li {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      width: 40px;
-      margin-right: 16px;
-      & + li {
-        margin-left: ${SIZES.large};
-      }
-
-      span {
-        position: absolute;
-        left: -1000%;
-      }
+    > * {
+      font-size: ${SIZES.xlarge};
     }
-  }
-`;
-
-export const RepositoryBoxIcon = styled.span`
-  display: flex;
-  justify-content: center;
-  width: ${SIZES.xxlarge};
-  height: 100%;
-  align-items: center;
-`;
-
-export const RepositoryTitle = styled.strong`
-  font-size: ${SIZES.large};
-`;
-
-export const Link = styled.a`
-  font-size: ${SIZES.large};
-  text-decoration: none;
-  color: ${COLORS.gray_dark};
-  padding: ${SIZES.normal};
-  opacity: 1;
-
-  &:hover {
-    opacity: 0.6;
   }
 `;

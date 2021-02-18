@@ -1,16 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logoImg from '../../assets/logo.svg';
 
-import { Logo, Wrapper, Navigation, Menu, Item } from './styles';
+import { Logo, Wrapper, Navigation, Menu, NavigationLink } from './styles';
 
 const Header: React.FC = () => {
   return (
     <Wrapper>
-      <Logo src={logoImg} alt="GitHub Search" />
+      <Link to="/">
+        <Logo src={logoImg} alt="GitHub Search" />
+      </Link>
       <Navigation>
         <Menu>
           <li>
-            <Item href="/historico">Histórico</Item>
+            <NavigationLink to="historico">Histórico</NavigationLink>
           </li>
         </Menu>
       </Navigation>

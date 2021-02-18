@@ -20,27 +20,26 @@ const Header: React.FC = () => {
               voluptatem nesciunt nam, provident cum. Eligendi maxime error vero
               deserunt ullam?
             </Bio>
+            <ul>
+              <li>
+                <strong>3526</strong>
+                <span>Followers</span>
+              </li>
+              <li>
+                <strong>9</strong>
+                <span>Following</span>
+              </li>
+              <li>
+                <strong>8</strong>
+                <span>Repos</span>
+              </li>
+              <li>
+                <strong>8</strong>
+                <span>Gists</span>
+              </li>
+            </ul>
           </div>
         </header>
-
-        <ul>
-          <li>
-            <strong>3526</strong>
-            <span>Followers</span>
-          </li>
-          <li>
-            <strong>9</strong>
-            <span>Following</span>
-          </li>
-          <li>
-            <strong>8</strong>
-            <span>Repos</span>
-          </li>
-          <li>
-            <strong>8</strong>
-            <span>Gists</span>
-          </li>
-        </ul>
       </ProfileInfo>
     </Wrapper>
   );

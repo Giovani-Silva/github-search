@@ -8,13 +8,12 @@ export const Wrapper = styled.header`
 
 export const ProfileInfo = styled.section`
   margin-top: 80px;
-  box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.38);
   padding: ${SIZES.xxlarge};
   border-radius: 5px;
   background: ${COLORS.white};
   header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     img {
       width: 120px;
       height: 120px;

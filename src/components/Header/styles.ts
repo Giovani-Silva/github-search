@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { COLORS, SIZES } from '../../styles/variables';
 
 export const Wrapper = styled.header`
   display: flex;
+  margin-bottom: 80px;
 `;
 
 export const Logo = styled.img`
@@ -17,14 +19,14 @@ export const Navigation = styled.nav`
 export const Menu = styled.ul`
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   max-width: 300px;
   width: 100%;
   margin-left: auto;
 `;
 
-export const Item = styled.a`
+export const NavigationLink = styled(Link)`
   display: flex;
   justify-content: space-around;
   align-items: center;
