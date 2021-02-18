@@ -57,7 +57,7 @@ export const Repositories = styled.div`
 
 export const RepositoryInfo = styled.div`
   flex: 1;
-  margin-left: 80px;
+  margin-left: ${SIZES.xxlarge};
   position: relative;
   overflow: hidden;
 
@@ -65,19 +65,30 @@ export const RepositoryInfo = styled.div`
     margin: ${SIZES.small} 0;
   }
 
-  ul li + li {
-    margin-left: ${SIZES.large};
+  ul {
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 40px;
+      margin-right: 16px;
+      & + li {
+        margin-left: ${SIZES.large};
+      }
+
+      span {
+        position: absolute;
+        left: -1000%;
+      }
+    }
   }
 `;
 
 export const RepositoryBoxIcon = styled.span`
   display: flex;
   justify-content: center;
-  background: #7373800a;
-  width: 80px;
+  width: ${SIZES.xxlarge};
   height: 100%;
-  position: absolute;
-  left: 0;
   align-items: center;
 `;
 

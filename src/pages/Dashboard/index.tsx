@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from 'react';
 import { FiGitBranch, FiLink, FiStar, FiEye } from 'react-icons/fi';
 
-import Profile from '../components/Profile';
+import Profile from '../../components/Profile';
 import {
   Form,
   Repositories,
@@ -28,18 +28,24 @@ const Dashboard: React.FC = () => {
       </Form>
       <Profile />
       <Repositories>
-        <RepositoryBoxIcon aria-hidden="true">
-          <FiGitBranch />
+        <RepositoryBoxIcon>
+          <FiGitBranch aria-hidden="true" />
         </RepositoryBoxIcon>
         <RepositoryInfo>
           <RepositoryTitle>Repo name</RepositoryTitle>
           <p>Repo desription</p>
           <ul>
             <li>
-              <span>9</span> <FiStar />
+              <strong>
+                9 <span>estrelas</span>
+              </strong>{' '}
+              <FiStar aria-hidden="true" />
             </li>
             <li>
-              <span>9</span> <FiEye />
+              <strong>
+                9 <span>visualizações</span>
+              </strong>{' '}
+              <FiEye aria-hidden="true" />
             </li>
           </ul>
         </RepositoryInfo>
