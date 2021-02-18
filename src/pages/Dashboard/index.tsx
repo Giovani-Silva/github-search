@@ -1,6 +1,15 @@
 import React, { FormEvent, useState } from 'react';
+import { FiGitBranch, FiLink, FiStar, FiEye } from 'react-icons/fi';
 
-import { Form } from './styles';
+import Profile from '../components/Profile';
+import {
+  Form,
+  Repositories,
+  RepositoryInfo,
+  RepositoryBoxIcon,
+  RepositoryTitle,
+  Link,
+} from './styles';
 
 const Dashboard: React.FC = () => {
   const [inputError, setInputError] = useState('');
@@ -17,6 +26,27 @@ const Dashboard: React.FC = () => {
         <input type="text" placeholder="username" />
         <button type="submit">Pesquisar</button>
       </Form>
+      <Profile />
+      <Repositories>
+        <RepositoryBoxIcon aria-hidden="true">
+          <FiGitBranch />
+        </RepositoryBoxIcon>
+        <RepositoryInfo>
+          <RepositoryTitle>Repo name</RepositoryTitle>
+          <p>Repo desription</p>
+          <ul>
+            <li>
+              <span>9</span> <FiStar />
+            </li>
+            <li>
+              <span>9</span> <FiEye />
+            </li>
+          </ul>
+        </RepositoryInfo>
+        <Link href="/">
+          <FiLink />
+        </Link>
+      </Repositories>
     </>
   );
 };

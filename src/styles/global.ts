@@ -9,7 +9,7 @@ export default createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
   }
-  html, body {
+  html, body, #root {
     min-height: 100vh;
   }
 

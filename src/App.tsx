@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './pages/components/header';
+import Header from './pages/components/Header';
 import Dashboard from './pages/Dashboard';
 import GlobalStyle from './styles/global';
 
