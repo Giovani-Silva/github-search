@@ -1,40 +1,50 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { Wrapper, ProfileInfo, Name, Email, Bio } from './styles';
 
-const Header: React.FC = () => {
+type UserType = {
+  // user: {
+  avatar_url: string;
+  name: string;
+  email: string;
+  bio: string;
+  followers: number;
+  following: number;
+  public_repos: number;
+  public_gists: number;
+  // };
+};
+
+interface UserProps {
+  user: UserType;
+  // children: ReactNode;
+}
+
+const Profile: React.FC<UserProps> = ({ user }) => {
   return (
     <Wrapper>
       <ProfileInfo>
         <header>
-          <img
-            src="https://avatars.githubusercontent.com/u/583231?v=4"
-            alt="avatar"
-          />
+          <img src={user.avatar_url} alt="avatar" />
           <div>
-            <Name>The Octocat</Name>
-            <Email>octocat@github.com</Email>
-            <Bio>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum
-              error itaque ipsa, quia consequatur, esse ut tempora tenetur ipsum
-              voluptatem nesciunt nam, provident cum. Eligendi maxime error vero
-              deserunt ullam?
-            </Bio>
+            <Name>{user.name}</Name>
+            <Email>{user.email || 'email não informado'}</Email>
+            <Bio>{user.bio || 'bio não informado'}</Bio>
             <ul>
               <li>
-                <strong>3526</strong>
+                <strong>{user.followers}</strong>
                 <span>Followers</span>
               </li>
               <li>
-                <strong>9</strong>
+                <strong>{user.following}</strong>
                 <span>Following</span>
               </li>
               <li>
-                <strong>8</strong>
+                <strong>{user.public_repos}</strong>
                 <span>Repos</span>
               </li>
               <li>
-                <strong>8</strong>
+                <strong>{user.public_gists}</strong>
                 <span>Gists</span>
               </li>
             </ul>
@@ -45,4 +55,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Profile;

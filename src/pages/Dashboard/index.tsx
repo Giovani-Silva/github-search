@@ -1,19 +1,35 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 
 import { FiSearch } from 'react-icons/fi';
+import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import Profile from '../../components/Profile';
 
 import RepositoryItem from '../../components/RepositoryItem';
+import api from '../../services/api';
 import { Form } from './styles';
 
 const Dashboard: React.FC = () => {
   const [input, setInput] = useState('');
+  const [searching, setSearching] = useState(false);
   // const [inputError, setInputError] = useState('');
+  const user = useSelector((state: RootStateOrAny) => state.user);
+  const dispatch = useDispatch();
 
-  function handleSearchUser(event: FormEvent<HTMLFormElement>): void {
+  useEffect(() => {
+    if (user.login) {
+      setInput(user.login);
+    }
+  }, [user]);
+
+  console.log(user);
+
+  async function handleSearchUser(
+    event: FormEvent<HTMLFormElement>,
+  ): Promise<void> {
     event.preventDefault();
-
-    console.log(event);
+    const response = await api.get(`/users/${input}`);
+    const action = { type: 'ADD_USER', data: response.data };
+    dispatch(action);
   }
 
   return (
@@ -29,7 +45,7 @@ const Dashboard: React.FC = () => {
           <FiSearch aria-label="Pesquisar" />
         </button>
       </Form>
-      <Profile />
+      <Profile user={user} />
       <RepositoryItem />
     </>
   );

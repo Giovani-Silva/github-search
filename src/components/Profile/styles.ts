@@ -11,6 +11,7 @@ export const ProfileInfo = styled.section`
   padding: ${SIZES.xxlarge};
   border-radius: 5px;
   background: ${COLORS.white};
+  width: 100%;
   header {
     display: flex;
     align-items: flex-start;
@@ -34,7 +35,7 @@ export const ProfileInfo = styled.section`
       strong {
         display: block;
         font-size: ${SIZES.xxlarge};
-        color: #3d3d4d;
+        color: ${COLORS.gray_dark};
       }
       span {
         display: block;
