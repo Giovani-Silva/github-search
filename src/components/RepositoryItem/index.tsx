@@ -1,12 +1,17 @@
 import React from 'react';
 import { FiLink, FiStar, FiEye } from 'react-icons/fi';
+import { Repos } from '../../@types/user';
 import { Repository, RepositoryInfo, RepositoryTitle, Link } from './styles';
 
-const RepositoryItem: React.FC = () => (
+interface RepoProps {
+  repository: Repos;
+}
+
+const RepositoryItem: React.FC<RepoProps> = ({ repository }) => (
   <Repository>
     <RepositoryInfo>
-      <RepositoryTitle>Repo name</RepositoryTitle>
-      <p>Repo desription</p>
+      <RepositoryTitle>{repository.name}</RepositoryTitle>
+      <p>{repository.description}</p>
       <ul>
         <li>
           <strong>
@@ -22,7 +27,7 @@ const RepositoryItem: React.FC = () => (
         </li>
       </ul>
     </RepositoryInfo>
-    <Link href="/">
+    <Link href={repository.html_url} target="_blank">
       <FiLink />
     </Link>
   </Repository>

@@ -1,23 +1,10 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { UserType } from '../../@types/user';
 
 import { Wrapper, ProfileInfo, Name, Email, Bio } from './styles';
 
-type UserType = {
-  // user: {
-  avatar_url: string;
-  name: string;
-  email: string;
-  bio: string;
-  followers: number;
-  following: number;
-  public_repos: number;
-  public_gists: number;
-  // };
-};
-
 interface UserProps {
   user: UserType;
-  // children: ReactNode;
 }
 
 const Profile: React.FC<UserProps> = ({ user }) => {

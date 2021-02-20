@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLORS, SIZES } from '../../styles/variables';
 
@@ -52,12 +53,13 @@ export const ItemTitle = styled.strong`
   font-size: ${SIZES.large};
 `;
 
-export const Link = styled.a`
+export const LinkRestore = styled.a`
   font-size: ${SIZES.large};
   text-decoration: none;
   color: ${COLORS.gray_dark};
   padding: ${SIZES.normal};
   opacity: 1;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.6;

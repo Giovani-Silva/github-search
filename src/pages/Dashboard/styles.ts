@@ -10,6 +10,14 @@ export const Form = styled.form<FormProps>`
   margin: 0 auto;
   max-width: 700px;
   display: flex;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  ${props =>
+    props.hasError &&
+    css`
+      border-color: ${COLORS.red};
+    `}
   input {
     flex: 1;
     height: 70px;
@@ -17,13 +25,7 @@ export const Form = styled.form<FormProps>`
     border: 0;
     border-radius: 5px 0 0 5px;
     color: #3a3a3a;
-    border: 2px solid #fff;
     border-right: 0;
-    ${props =>
-      props.hasError &&
-      css`
-        border-color: ${COLORS.red};
-      `}
     &::placeholder {
       color: ${COLORS.gray};
     }
@@ -44,4 +46,11 @@ export const Form = styled.form<FormProps>`
       font-size: ${SIZES.xlarge};
     }
   }
+`;
+
+export const Error = styled.span`
+  display: block;
+  color: ${COLORS.red};
+  margin: ${SIZES.small} auto 0;
+  max-width: 700px;
 `;

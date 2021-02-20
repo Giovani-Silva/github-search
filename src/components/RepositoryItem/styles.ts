@@ -6,7 +6,7 @@ export const Repository = styled.div`
   background: #fff;
   border-radius: 5px;
   width: 100%;
-  padding: ${SIZES.large};
+  padding: ${SIZES.xxlarge};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,6 @@ export const Repository = styled.div`
 
 export const RepositoryInfo = styled.div`
   flex: 1;
-  margin-left: ${SIZES.xxlarge};
   position: relative;
   overflow: hidden;
 
