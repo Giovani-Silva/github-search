@@ -14,24 +14,41 @@ export const ProfileInfo = styled.section`
   width: 100%;
   header {
     display: flex;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 520px) {
+      flex-direction: row;
+    }
     img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
     }
     div {
-      margin-left: 24px;
+      margin-left: 0;
+      margin-top: ${SIZES.xlarge};
+      flex: 1;
+      @media (min-width: 520px) {
+        margin-left: ${SIZES.xlarge};
+        margin-top: 0;
+      }
     }
   }
   ul {
-    display: flex;
-    list-style: none;
     margin-top: 40px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: ${SIZES.normal};
+
+    @media (min-width: 520px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     li {
-      & + li {
-        margin-left: 80px;
-      }
+      text-align: center;
       strong {
         display: block;
         font-size: ${SIZES.xxlarge};
