@@ -48,9 +48,13 @@ const Dashboard: React.FC = () => {
           data: { ...getUser.data, restored: false },
         };
         dispatch(actionUser);
-        requesRepos(username);
+        if (getUser.data) requesRepos(username);
       } catch (e) {
-        setInputError('Não foi possível encontrar o usuário');
+        if (e.message === 'Request failed with status code 403') {
+          setInputError('Limite de requisição da API foi excedido.');
+        } else {
+          setInputError('Não foi possível encontrar o usuário');
+        }
       } finally {
         setSearching(false);
       }
