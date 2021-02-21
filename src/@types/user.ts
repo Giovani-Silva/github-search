@@ -8,6 +8,7 @@ export type UserType = {
   following: number;
   public_repos: number;
   public_gists: number;
+  restored?: boolean;
   repos: Repos[];
 };
 

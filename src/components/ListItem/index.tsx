@@ -16,7 +16,10 @@ const ListItem: React.FC<UserProps> = ({ user }) => {
   const history = useHistory();
 
   function handleRestoreUser(userRestore: UserType): void {
-    const actionUser = { type: userActionTypes.ADD_USER, data: userRestore };
+    const actionUser = {
+      type: userActionTypes.ADD_USER,
+      data: { ...userRestore, restored: true },
+    };
     dispatch(actionUser);
     history.push('/');
   }

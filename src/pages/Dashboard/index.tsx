@@ -2,9 +2,9 @@ import React, { FormEvent, useCallback, useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import { FiSearch } from 'react-icons/fi';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+
 import { Repos } from '../../@types/user';
 import Profile from '../../components/Profile';
-
 import RepositoryItem from '../../components/RepositoryItem';
 import api from '../../services/api';
 import { Form, Error } from './styles';
@@ -45,7 +45,7 @@ const Dashboard: React.FC = () => {
         const getUser = await api.get(`/users/${username}`);
         const actionUser = {
           type: userActionTypes.ADD_USER,
-          data: getUser.data,
+          data: { ...getUser.data, restored: false },
         };
         dispatch(actionUser);
         requesRepos(username);
@@ -61,7 +61,7 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     if (user.login) {
       setInput(user.login);
-      setRestore(user.login);
+      if (user.restored) setRestore(user.login);
       const userData = {
         history_date: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss"),
         ...user,
